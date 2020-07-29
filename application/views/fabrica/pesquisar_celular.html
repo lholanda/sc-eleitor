@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SC-Eleitor</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    
+    <link rel="icon" href="phtilogo.png">
+
+    <link rel="stylesheet" href="fontawesome.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- fontawesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <nav class="navbar navbar-expand navbar-dark" style="background-color: #4E5D6C">
+            <a class="navbar-brand" style="font-size: 22px" href="#">SysConecte</a>
+            <!-- <a class="sidebar-toggle text-light mr-3">
+                <span class="navbar-toggler-icon"></span> 
+            </a> -->
+            <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+
+    </ul>
+            <div class="col-md-8"></div>
+            <div class="dropdown-content dropdown-menu-right ml-2 mr-2">
+                <button class="btn btn-info dropdown-toggle" style="background-color: #4E5D6C" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-cog" style="font-size: 20px"></i>
+                </button>
+                <div class="col-md-8">
+                    <div class="dropdown-menu" aria-labelledby=" dropdownMenuButton">
+                        <a class="dropdown-item" style="font-size: 18px" href="#"><i class="fa fa-sign-out mr-1"></i>Logout</a>
+                    </div>
+                </div>
+                
+            </div>   
+            
+            <div class="align-self-center ml-2">
+                <h4>
+                    <i class="fa fa-user mr-2" style="font-size: 20px"></i><span></span>
+                </h4>
+            </div>
+
+
+        </nav>
+
+        <!---------------------------------------  Fim Cabeçalho  --------------------------------------------->
+
+<br>
+<h2 class="display-6 titulo text-center">Relatório por Celular</h2>
+<br>
+<!-- CONTEUDO -->
+<div class="content p-1">
+    <div class="list-group-item">
+        <!-- inicio d-flex -->
+        <div class="d-flex">
+            <!-- <div class="mr-auto p-0">
+                    </div> -->
+            <a href="#">
+                <form action="#" name="form_relatorioCelular" method="post">
+                    <div class="p-2 sc-pesquisar-campos">
+                        <label class="sc-pesquisar">Pesquisar por</label><i class="fa fa-search sc-icon-pesquisar"
+                            aria-hidden="true"></i>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" name="pesquisa_relatorioCelular" class="form-control sc-input-relatorios"
+                                    placeholder="Insira sua pesquisa">
+                             </div>
+                            </div>
+                            <div class="row">
+                             <div class="col-md-4">
+                                 <button class="btn sc-botao-pesquisar">Pesquisar</button>
+                             </div>
+                             </div>       
+                    </div>
+                </form>
+                    <!--<select name="busca" class="form-control sc-input-pesquisar">
+                      <option value=""></option>
+                      <option value="">Relatório</option>
+                      <option value="">Liderança</option>
+                      <option value="">Nome</option>
+                      <option value="">Celular</option>
+                      <option value="">Bairro</option>
+                    </select>-->
+                    <!--<form action="#" name="form_relatorio" method="post"></form>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <button class="btn sc-botao-relatorios">Relatório Cad.</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <button class="btn sc-botao-relatorios">Liderança</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <button class="btn sc-botao-relatorios">Nome</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <button class="btn sc-botao-relatorios">Celular</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <button class="btn sc-botao-relatorios">Bairro</button>
+                        </div>
+                    </div>
+                    </div>-->
+            </a>
+            <!--<a href="#" class="">
+                <div class="p-2 ml-5">
+                    <button class="btn btn-info">
+                        <?php echo $qtd_reg?>
+                    </button>
+                </div>
+            </a>-->
+        </div>
+        <!-- area reservada para alert -->
+        <div class="alert alert-success text-left" role="alert" hidden>
+            Usuário excluído com sucesso !!!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!-- area reservada para alert -->
+        <hr>
+        <div class="container">
+            <table class="table table-bordered table-striped table-sm">
+                <thead>
+                    <tr>
+                        <!-- <th class="text-center">Contador</th> -->
+                        <th class="text-center">Id</th>
+                        <th class="text-center">Nome</th>
+                        <th class="text-right">Apelido</th>
+                        <th class="text-right">Data Cadastro</th>
+                        <th class="text-right">Ativo ?</th>
+                        <th class="text-center">Ações</th>
+                    </tr>
+                </thead>
+                <!--<?php
+                $contador = count($pessoas);
+                foreach ($pessoas as $pessoa) : ?>-->
+                    <!--<tr>
+                        <td> <?php echo $pessoa->peo_id ?></td>
+                        <td> <?php echo $pessoa->peo_nome ?></td>
+                        <td class="text-right"><?php  echo $pessoa->peo_apelido ?></td>
+                        <td class="text-right"><?php  echo date('d-m-Y', strtotime($pessoa->peo_data)) ?></td>
+                        <td class="text-center"><?php echo ($pessoa->peo_ativo ? 'Sim' : 'não') ?> </td>-->
+                        <td class="text-center">
+                            <span class="d-none d-md-block">
+                                <a href="#" class="btn sc-botao-editar" title="Editar cadastro">
+                                    Editar
+                                </a>
+                                <!--<a href="<?php echo base_url('pessoas/apagar/') . $pessoa->peo_id ?>" class="btn btn-outline-danger btn-sm" data-toggle="modal000" data-target="#apagarRegistro" title="Apagar cadastro">
+                                    Excluir
+                                </a>-->
+                            <!--</span>
+                        </td>
+                    </tr>-->
+                    <!--<?php
+                    # $contador--;
+                endforeach; ?>-->
+            </table>
+            
+            <!-- PAGINATOR -->
+            <!--<div class="text-center" <?php echo ($qtde_paginas > 1) ? "" : "style='display: none;'" ?>>
+                <?php echo $paginator ?>
+            </div>-->
+            <!-- END PAGINATOR -->
+
+
+           
+        </div><!-- final d-flex -->
+    </div>
+</div> <!-- FINAL de conteúdo -->
+
+<!--<?php
+
+/*
+
+ <div class="text-center" <?php echo ($qtde_paginas > 1) ? "" : "style='display: none;'" ?>>
+                <nav aria-label="...">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link  <?php echo $btnA ?>" 
+                                href="<?php echo base_url('pessoas/pagina/') . 1 ?>"
+                                tabindex="-1">
+                                Primeiro
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <?php $pagina_anterior = ($pagina - 1) < 1 ? 1 : ($pagina - 1); ?>
+                            <a class="page-link  <?php echo $btnA ?>" 
+                               href="<?php echo base_url('pessoas/pagina/') . $pagina_anterior ?>"
+                               tabindex="-1">
+                             Anterior
+                            </a>
+                        </li>
+                        <?php
+                           $pag_para_exibir_botao = $pagina;
+                           for($i = $pag_para_exibir_botao; $i < ($pag_para_exibir_botao + $qtde_botoes) ; $i++): //($pagina + $qtde_botoes); $i++):     
+                                ?>  
+                                <li class="page-item" <?php echo ($i > 118) ? 'hidden' : ''?>>
+                                     <a class="page-link <?php echo ($pag_para_exibir_botao == $i ) ? 'active' : ' '?>" 
+                                         href="<?php echo base_url('pessoas/pagina/') . $i ?>">
+                                         <?php echo $i?>
+                                         <span class="<?php echo ($pagina = $i) ? 'sr-only' : ' '?>"></span> 
+                                     </a>
+                                 </li> 
+                        <?php
+
+                           endfor;
+                           $pag_para_exibir_orig = $i;
+                        ?>
+
+
+                        <li class="page-item">
+                            <?php
+                              $pagina_proximo = 
+                              ($pagina + 1) > $qtde_paginas ? ($qtde_paginas - $qtde_botoes + 1) : ($pagina + 1);
+                            ?>
+                            
+                            <a class="page-link  <?php echo $btnA ?>" href="<?php echo base_url('pessoas/pagina/') . $pagina_proximo ?>"
+                               tabindex="-1">
+                             Próximo
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link  <?php echo $btnA ?>" 
+                                href="<?php echo base_url('pessoas/pagina/') . ($qtde_paginas - $qtde_botoes + 1)  ?>"
+                                tabindex="-1">
+                                Último
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+ */
+ ?>-->
+
+
+<!------------------------------------- Fim Conteúdo ------------------------------->
+
+
+ <br>
+  <div class="container-fluid text-center" style="background-color: #4E5D6C">
+    <hr>
+    <p style="font-size: 21px">SysConecte &copy; 2020</p>
+    </div>       
+
+    <script src="jquery-3.2.1.slim.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="dashboard.js"></script>
+    <!--
+    <script src="js/fontawesomeKit.js"></script> 
+    <script src="js/fontawesome-all.min.js"></script> -->
+</body>
+</html>

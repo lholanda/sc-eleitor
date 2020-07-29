@@ -1,0 +1,84 @@
+
+<!-- inicio d-flex -->
+<div class="container">
+
+  <br>
+  <h2 class="display-6 titulo-black text-center">Bot Email</h2>
+  <br>
+  <!-- CONTEUDO -->
+  <div class="content p-1">
+      <div class="list-group-item">
+          <div class="container">
+  
+          </form>--><!--Fim formulário de novo cadastro  -->  
+          <form action="#" name="form_bot" method="post">
+            <div class="row">
+              <div class="col-md-4">
+                <label>Nome</label>
+                <input type="text" name="nome" value="" class="form-control sc-input" placeholder="Insira o Nome">
+              </div>
+            <div class="col-md-4">
+              <label>Email</label>
+                <input type="text" name="email" value="" class="form-control sc-input" placeholder="Insira o Email">
+            </div>
+            <div class="col-md-4">
+              <label>Título da Mensagem</label>
+                <input type="text" name="titulo" value="" class="form-control sc-input" placeholder="Insira o Título da Mensagem">
+            </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-8">
+                <label>Assunto</label>
+                  <textarea name="assunto" value="" class="form-control sc-textarea-email" placeholder="Insira o Assunto"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <input type="submit" class="btn sc-botao-enviarEmail" value="Enviar" onclick="return validar()">
+              </div>
+            </div>
+          </form>
+          
+          <script language="javascript" type="text/javascript">
+            function validar(){
+              var nome = form_bot.nome.value;
+              var email = form_bot.email.value;
+              var titulo = form_bot.titulo.value;
+              var assunto = form_bot.assunto.value;
+        
+              if(nome == ""){
+                alert('Preencha o campo Nome');
+                form_bot.nome.focus;
+                return false;
+              }
+        
+              if(email == ""){
+                alert('Preencha o campo Email');
+                form_bot.email.focus;
+                return false;
+              }
+
+              if(email.indexOf('@') == -1){
+                alert('Email incorreto');
+                form_add.email.focus;
+                return false;
+              }
+        
+              if(titulo == ""){
+                alert('Preencha o campo Título da Mensagem');
+                form_bot.titulo.focus;
+                return false;
+              }
+        
+              if(assunto == ""){
+                alert('Preencha o campo Assunto');
+                form_bot.assunto.focus;
+                return false;
+              }
+            }
+          </script> 
+  
+          </div>
+      </div> <!-- final d-flex -->
+  </div> <!-- FINAL de conteúdo -->
