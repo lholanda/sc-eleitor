@@ -21,73 +21,83 @@
 
 <body>
     <div class="container">
+        <div class="content p-1">
+            <!-- inicio do Header -->
+            <header>
+                <nav class="navbar navbar-expand-md navbar-dark sc-barra-cab">
+                    <div class="container">
+                        <a class="navbar-brand sc-menu-sys" href="<?php echo $baseUrl ?>pessoas">SYSCONECTE</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        
+                        <div class="collapse navbar-collapse ml-4" id="navbarCollapse">
+                            <ul class="navbar-nav ml-2">
+                                <li class="nav-item menu">
+                                    <a class="nav-link sc-menu-whats" href="<?php echo base_url() . 'whats' ?>">
+                                        <i class="fa fa-whatsapp mr-1" aria-hidden="true"></i>WhatsApp</a>
+                                </li>
+                                <li class="nav-item menu ml-2">
+                                    <a class="nav-link sc-menu-email" href="<?php echo base_url() . 'campanha_email' ?>">
+                                        <i class="fa fa-envelope-o mr-1" aria-hidden="true"></i>Email</a>
+                                </li>
+                                <li class="nav-item menu ml-2">
+                                    <a class="nav-link sc-menu-relatorio" href="<?php echo base_url() . 'relatorios' ?>">
+                                        <i class="fa fa-book mr-1" aria-hidden="true"></i>Relatórios</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4"></div>
+                        <div class="dropdown-content dropdown-menu-right">
+                            <button class="btn dropdown-toggle sc-barra-cab"  type="button" id="dropdownMenuButton" 
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-cog mr-0"></i>
+                            </button>
+                            <div class="col-md-8">
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="<?php echo site_url('usuarios/logout') ?>">
+                                    <i class="fa fa-sign-out mr-1"></i>Logout</a>
+                                </div>
+                            </div>
 
+                        </div>
 
-
-
-    <div class="content p-1" >
-          <!-- inicio do Header -->
-          <header>
-            <nav class="navbar navbar-expand-md navbar-dark bg-info">
-                <div class="container">
-                    <a class="navbar-brand" href="index.html">Meu Site</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                            data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" 
-                            aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item menu">
-                                <a class="nav-link" href="">Home</a>
-                            </li>
-                            <li class="nav-item menu">
-                                <a class="nav-link" href="">Sobre a Empresa</a>
-                            </li>
-                            <li class="nav-item menu">
-                                <a class="nav-link " href="">Blog</a>
-                            </li>
-                            <li class="nav-item menu">
-                                <a class="nav-link " href="">Contato</a>
-                            </li>
-                        </ul>
+                        <div class="align-self-center">
+                            <h4>
+                                <i class="fa fa-user mr-2"></i><span><?php echo $this->session->userdata('usuario') ?></span>
+                            </h4>
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </header>  
-    </div> 
-        <!-- final do Header --> 
+                </nav>
+            </header>
+        </div>
+        <!-- final do Header -->
+    </div>
 
-        <nav class="navbar navbar-expand-md navbar-dark " style="background-color: #0000cc">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<nav class="navbar navbar-expand-md navbar-dark " style="background-color: #0000cc">
             <a class="navbar-brand " href="<?php echo $baseUrl ?>pessoas">SysConecte</a>
             <a class="navbar-brand ml-5 " href="<?php echo base_url() . 'whats' ?>"style="background-color: #0000aa" >WhatsApp</a>
             <a class="navbar-brand mx-2" href="<?php echo base_url() . 'campanha_email' ?>">EMAIL</a>
-            <a class="navbar-brand mx-2" href="<?php echo base_url() . 'relatorios' ?>">RELATÓRIOS</a>
+            <a class="navbar-brand mx-2" href="<?php echo base_url() . 'relatorios' ?>">RELATÓRIOS</a>-->
 
-            <!-- <a class="sidebar-toggle text-light mr-3">
+    <!-- <a class="sidebar-toggle text-light mr-3">
                 <span class="navbar-toggler-icon"></span> 
             </a> -->
 
-            <div class="col-md-4"></div>
-            <div class="dropdown-content dropdown-menu-right ml-2 mr-2">
-                <button class="btn btn-info dropdown-toggle" style="background-color: #0000cc" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-cog"></i>
-                </button>
-                <div class="col-md-8">
-                    <div class="dropdown-menu" aria-labelledby=" dropdownMenuButton">
-                        <a class="dropdown-item" href="<?php echo site_url('usuarios/logout') ?>"><i class="fa fa-sign-out mr-1"></i>Logout</a>
-                    </div>
-                </div>
-                
-            </div>   
-            
-            <div class="align-self-center ml-2">
-                <h4>
-                    <i class="fa fa-user mr-2"></i><span><?php echo $this->session->userdata('usuario') ?></span>
-                </h4>
-            </div>
-
-
-        </nav>
-
-        <!-- fim nav1 -->
+    <!-- </nav> -->
+    <!-- fim nav1 -->

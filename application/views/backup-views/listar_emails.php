@@ -1,6 +1,4 @@
-<br>
 <h2 class="display-6 titulo text-center">Campanha de Emails</h2>
-<br>
 <!-- CONTEUDO -->
 <div class="content p-1">
     <div class="list-group-item">
@@ -17,45 +15,45 @@
                         <div class="row">
 
 
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <label>Nome da Campanha</label>
-                                <input type="text" name="campanha" value="" class="form-control sc-input" required placeholder="Insira o nome da campanha" readonly>
-                            </div>  
+                                <input type="text" name="campanha" value="" class="sc-input " required placeholder="Insira o nome da campanha">
+                            </div>
+                            <hr>
+
                             <div class="col-md-4">
                                 <label>Título da Mensagem</label>
-                                <input type="text" name="titulo" value="" class="form-control sc-input" required placeholder="Insira o título da campanha" readonly>
+                                <input type="text" name="titulo" value="" class="sc-input" required placeholder="Insira o título da campanha">
                             </div>
-                            </div>
-                            <br>
-                            <div class="row">
                             <div class="col-md-8">
                                 <label>Mensagem</label>
-                                <input type="text" name="mensagem" value="" class="form-control sc-input" required placeholder="Insira o mensagem da campanha" readonly></textarea>
+                                <input type="text" name="mensagem" value="" class="sc-input" required placeholder="Insira o mensagem da campanha"></textarea>
                             </div>
-</div>
-                        
+                        </div>
+                </div>
                 </form>
-             <!-- final d-flex -->
+            </div>
+        </div> <!-- final d-flex -->
 
-        <br<br><br>
-        <div class="row">
+
+
         <a href="<?php echo base_url() . 'pessoas/add' ?>">
-            <div class="p-3 ml-4">
-                <button class="btn sc-botao-marcar">
+            <div class="p-2">
+                <button class="btn btn-outline-success">
                     MARCAR TODOS
                 </button>
             </div>
         </a>
 
         <a href="<?php echo base_url() . 'bot' ?>">
-            <div class="p-3 ml-4">
-                <button class="btn sc-botao-enviar">
+            <div class="p-2">
+                <button class="btn btn-outline-success">
                     ENVIAR
                 </button>
             </div>
         </a>
 
-
+    </div>
     <!-- area reservada para alert -->
     <div class="alert alert-success text-left" role="alert" hidden>
         Usuário excluído com sucesso !!!
@@ -65,15 +63,14 @@
     </div>
     <!-- area reservada para alert -->
     <hr>
-
-    <div class="container ml-4">
+    <div class="container">
         <table class="table table-bordered table-striped table-sm">
             <thead>
                 <tr>
                     <!-- <th class="text-center">Contador</th> -->
                     <th class="text-center">Id</th>
                     <th class="text-center">Nome</th>
-                    <th class="text-center">Email</th>
+                    <th class="text-right">Email</th>
                     <th class="text-right">Data Cadastro</th>
                     <th class="text-right">Enviar ?</th>
                     <th class="text-center">Açoes</th>
@@ -106,11 +103,9 @@
             <?php echo $paginator ?>
         </div>
         <!-- END PAGINATOR -->
-        </div>
-            </div>
-            </div>
 
-            </div>
-        </div><!-- final d-flex -->
-    </div>
+
+
+    </div><!-- final d-flex -->
+</div>
 </div> <!-- FINAL de conteúdo -->

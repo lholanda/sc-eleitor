@@ -102,8 +102,8 @@ body {
 }
 
 .sc-botao-novo-cadastrar {
-  background-color: #5bc0de; 
   color: #fff; 
+  background-color: #5bc0de; 
   border-radius: 18px;
   width: 170px;
   font-size: 16px;
@@ -111,14 +111,15 @@ body {
 }
 
 .sc-botao-novo-cadastrar:hover{
-  background-color: #ffa600;
+  background-color: #5dd55d;
 }
 
 .sc-botao-whats{
-  background-color: #5dd55d;
   color: #fff; 
+  background-color: #5bc0de; 
   border-radius: 18px;
-  width: 150px;
+  width: 140px;
+  height: 50px;
   transition: 0.7s ease-in-out;
 }
 
@@ -128,17 +129,18 @@ body {
 }
 
 .sc-botao-email{
-  background-color: #5bc0de;
   color: #fff; 
+  background-color: #5bc0de; 
   border-radius: 18px;
-  width: 150px;
+  width: 140px;
   transition: 0.7s ease-in-out;
 }
 
 .sc-botao-email:hover{
-  background-color: #1b1b53;
+  background-color: #289b28;
   color: #fff;
 }
+
 
 i{
   margin-right: 20px;
@@ -147,36 +149,29 @@ i{
 .sc-botao-editar{
   background-color: #5bc0de; 
   color: #fff;
+  width: 140px;
   transition: 0.4s ease-in-out;
 }
 
 .sc-botao-editar:hover{
-  background-color: #2288a6;
-}
-
-.sc-botao-voltar{
-  color: #fff; 
-  background-color: #5dd55d;
-  border-radius: 18px; 
-  width: 78px;
-  transition: 0.5s ease-in-out;
-}
-
-.sc-botao-voltar:hover{
   background-color: #289b28;
+  color: #fff;
 }
+
+
 
 .sc-botao-atualizar{
   color: #fff; 
   background-color: #5bc0de;
   border-radius: 18px; 
-  width: 100px;
+  width: 140px;
   margin-left: 20px;
   transition: 0.5s ease-in-out;
 }
 
 .sc-botao-atualizar:hover{
-  background-color: #2288a6;
+  background-color: #289b28;
+  color: #fff;
 }
 
 ::-webkit-input-placeholder {
@@ -241,7 +236,7 @@ i{
   background-color: #5bc0de;
   border-radius: 18px;
   margin-top: 10px;
-  width: 110px;
+  width: 140px;
   color: #fff;
 }
 
@@ -257,20 +252,21 @@ i{
   background-color: #5bc0de;
   color: #fff;
   border-radius: 18px;
-  width: 110px;
+  width: 140px;
   margin-top: 30px;
   transition: 0.5s ease-in-out;
 }
 
 .sc-botao-enviarEmail:hover{
-  background-color: #d22e2e;
+  background-color: #2288a6;
+  color: #fff;
 }
 
 .sc-botao-escrever{
   background-color: #5bc0de;
   color: #fff;
   border-radius: 18px;
-  width: 110px;
+  width: 140px;
   margin-top: 30px;
   transition: 0.5s ease-in-out;
 }
@@ -278,4 +274,83 @@ i{
 .sc-botao-escrever:hover{
   background-color: #2288a6;
   color: #fff;
+}
+
+.sc-botao-email-menu{
+  background-color: #fff;
+  color: #fff;
+}
+
+.sc-botao-relatorio{
+  background-color: #d22e2e;
+  color: #fff;
+}
+
+.sc-botao-voltarCampanha{
+  color: #fff; 
+  background-color: #5dd55d;
+  border-radius: 18px; 
+  width: 140px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-voltarCampanha:hover{
+  background-color: #289b28;
+}
+
+.sc-botao-marcar{
+  color: #fff; 
+  background-color: #5dd55d;
+  border-radius: 18px; 
+  width: 140px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-marcar:hover{
+  background-color: #289b28;
+}
+
+.sc-botao-enviar{
+  background-color: #5bc0de;
+  color: #fff;
+  border-radius: 18px;
+  width: 140px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-enviar:hover{
+  background-color: #d22e2e;
+}
+
+.sc-menu-whats{
+  font-size: 15px;
+}
+
+.sc-menu-email{
+  font-size: 15px;
+}
+
+.sc-menu-relatorio{
+  font-size: 15px;
+}
+
+.sc-menu-sys{
+  font-size: 19px;
+}
+
+.sc-barra-cab{
+  background-color: #0000ff;
+}
+
+
+.sc-botao-voltar{
+  color: #fff; 
+  background-color: #c0c0c0;
+  border-radius: 18px; 
+  width: 140px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-voltar:hover{
+  background-color: #808080;
 }

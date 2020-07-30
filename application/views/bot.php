@@ -1,10 +1,20 @@
+
 <!-- inicio d-flex -->
-<div class="container text-center">
-  <h2 class="display-6 titulo-black">BOTs</h2>
+
+  
+
+<h2 class="display-6 titulo text-center mt-1 mb-1">WhatsApp</h2>
+<div class="container  text-center">
+  <h2 class="display-6 titulo-black mt-1 mb-1"></h2>
   <!-- CONTEUDO -->
   <div class="content p-1">
-    <div class="list-group-item  text-center">
-      
+    <div class="list-group-item">
+      <div class="container">
+      <div class="container">
+    <!-- CONTEUDO -->
+    <div class="content p-1">
+      <div class="list-group-item  text-center">
+
         <!-- Button submit(enviar) formulário -->
         <br />
 
@@ -12,24 +22,27 @@
 
         <div class="row">
           <div class="container text-center">
-            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=<?php echo $whatsAppPhone ?>" target="_blank"><button type="submit" class="btn sc-botao-whats">
-              <i class="fa fa-phone" aria-hidden="true"></i>Whatts Web</button></a>
+            <a href="https://api.whatsapp.com/send?1=pt_BR&phone=<?php echo $whatsAppPhone ?>" target="_blank">
+              <button type="submit" class="btn sc-botao-whats">
+                <i class="fa fa-phone" aria-hidden="true"></i>WhatsApp Web</button></a>
           </div>
         </div>
         <br>
-        <div class="row">
-          <div class="container text-center">
-            <a href="<?php echo base_url().'bot_email'?>?>"><button type="submit" class="btn sc-botao-email">
-              <i class="fa fa-envelope" aria-hidden="true"></i>Enviar Email</button></a>
-          </div>
-        </div>
         <br><!-- fim do button submit(enviar) formulário -->
 
 
         </form>
         <!--Fim formulário de novo cadastro  -->
 
- 
-    </div> <!-- final d-flex -->
+
+      </div> <!-- final d-flex -->
+    </div> <!-- FINAL de conteúdo -->
+  </div>
+
+
+
+      </div>
+    </div><!-- final d-flex -->
+
   </div> <!-- FINAL de conteúdo -->
-</div>
+
