@@ -14,6 +14,10 @@
             $this->load->view('/template/cabecalho');
             $this->load->view('campanha_email', $dados);
             $this->load->view('/template/rodape');
+
+
+            // depois vai para 
+
                       
         }
 

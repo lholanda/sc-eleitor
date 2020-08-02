@@ -1,5 +1,5 @@
 <!-- inicio d-flex -->
-<h2 class="display-6 titulo text-center">Novo Cadastro</h2>
+<h2 class="display-6 titulo text-center mt-1 mb-1">Novo Cadastro</h2>
 <div class="container">
   <!-- CONTEUDO -->
   <div class="content p-1">
@@ -65,18 +65,18 @@
 
  
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mt-2">
               <label>Titulo Eleitoral</label>
               <input type="text" name="titulo_eleitoral" value="" class="form-control sc-input" placeholder="Insira o Título Eleitoral">
             </div>
             <div class="col-md-1 hidden"></div>
 
-            <div class="col-md-3">
+            <div class="col-md-3 mt-2">
               <label>Seção Eleitoral</label>
               <input type="text" name="secao_eleitoral" value="" class="form-control sc-input" placeholder="Insira a Seção Eleitoral">
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 mt-2">
               <label>Zona Eleitoral</label>
               <input type="text" name="zona_eleitoral" value="" class="form-control sc-input" placeholder="Insira a Zona Eleitoral">
             </div>
@@ -86,11 +86,11 @@
 
           <!-- Input text preço do produtos -->
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8 mt-2">
               <label>Endereço</label>
               <input type="text" name="endereco" value="" class="form-control sc-input" placeholder="Insira o Endereço">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-2">
               <label>Complemento</label>
               <input type="text" name="complemento" value="" class="form-control sc-input" placeholder="Insira o Complemento">
             </div>
@@ -129,7 +129,7 @@
             </div>
             <div class="col-md-4 mt-2">
               <label>Saúde</label>
-              <input type="text" name="saude" value="" class="form-control sc-input" placeholder="Insira o Estado de Saúde">
+              <input type="text" name="saude" value="" class="form-control sc-input" placeholder="Ex: saudavel, adoentado">
             </div>
           </div>
           <div class="row">
@@ -174,7 +174,7 @@
  
           <div class="row">
             <div class="col-md-2">
-              <button type="submit" class="btn sc-botao-cadastrar" onclick="return validar()">Cadastrar</button>
+              <button type="submit" class="btn sc-botao-acao" onclick="return validar()">Cadastrar</button>
             </div>
             <div class="col-md-2">
               <a class="btn sc-botao-voltar" href="<?php echo base_url() ?>pessoas">Voltar</a>

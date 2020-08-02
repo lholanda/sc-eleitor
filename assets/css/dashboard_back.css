@@ -1,0 +1,382 @@
+body {
+  background-color: #1e2835;
+}
+
+.menu-header {
+  color : #FFF !important;
+}
+
+.sidebar {
+  background-color: #222c3c;
+  min-width: 250px;
+  max-width: 250px;
+  min-height: calc(100vh - 56px);
+  transition: all 0.3s;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 0.75rem 1rem;  /* .75 superior e 1 para laterais */
+  color : #c7cace;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover, .sidebar ul .active a {
+  color : #ecedee;
+  background-color: #354358;
+}
+
+/* personalizar submenu (ul ul) dois ul pois é sub menu*/
+.sidebar ul ul a{
+  padding-left: 2.5rem;
+  background-color: #1e2835;
+}
+/*Seletor utilizado para ativar o botão ocultar menu em PC*/ 
+.sidebar.toggled{
+  margin-left: -250px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    margin-left: -250px;  /* faz sumir */
+  }
+
+  .sidebar.toggled {      /* coloca toggle 0 para nao atrapalhar .sidebar */
+    margin-left: 0px;
+  }
+}
+
+/* Menu do sidebar para apresentar uma seta para baixo ou para cima quando abre um submenu*/
+.sidebar [data-toggle="collapse"]{
+  position: relative;
+}
+.sidebar [data-toggle="collapse"]:before{
+  content: "\f0d7";  /* preenche com um icone */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 1rem;
+}
+
+/* coloca uma bem discreta cor para o dropdown menu */
+.sidebar [aria-expanded="true"]{
+  background-color: #19222d;
+}
+
+/* muda icone para seta pra cima :before (obrigatorio)*/
+.sidebar [aria-expanded="true"]:before {
+  content: "\f0d8";
+}
+
+.content {
+    width: 100%;
+}
+
+.titulo {
+    font-size: 2.0rem !important;
+}
+
+.titulo-black {
+  font-size: 2.0rem !important;
+  color: #fff;
+}
+
+.sc-input {
+  background-color: #354554; 
+  color: #fff; 
+  border-radius: 25px;
+}
+
+.sc-botao-cadastrar
+{
+  color: #fff; 
+  background-color: #5bc0de; 
+  border-radius: 18px; 
+  width: 140px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-cadastrar:hover
+{
+  background-color: #5dd55d;
+}
+
+.sc-botao-novo-cadastrar {
+  color: #fff; 
+  background-color: #5bc0de; 
+  border-radius: 18px;
+  width: 170px;
+  font-size: 16px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-novo-cadastrar:hover{
+  background-color: #5dd55d;
+}
+
+.sc-botao-whats{
+  color: #fff; 
+  background-color: #5bc0de; 
+  border-radius: 18px;
+  width: 140px;
+  height: 50px;
+  transition: 0.7s ease-in-out;
+}
+
+.sc-botao-whats:hover{
+  background-color: #289b28;
+  color: #fff;
+}
+
+.sc-botao-email{
+  color: #fff; 
+  background-color: #5bc0de; 
+  border-radius: 18px;
+  width: 140px;
+  transition: 0.7s ease-in-out;
+}
+
+.sc-botao-email:hover{
+  background-color: #289b28;
+  color: #fff;
+}
+
+
+i{
+  margin-right: 20px;
+}
+
+.sc-botao-editar{
+  background-color: #5bc0de; 
+  color: #fff;
+  width: 140px;
+  transition: 0.4s ease-in-out;
+}
+
+.sc-botao-editar:hover{
+  background-color: #289b28;
+  color: #fff;
+}
+
+.sc-botao-atualizar{
+  color: #fff; 
+  background-color: #5bc0de;
+  border-radius: 18px; 
+  width: 140px;
+  margin-left: 20px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-atualizar:hover{
+  background-color: #289b28;
+  color: #fff;
+}
+
+::-webkit-input-placeholder {
+  font-size: 14px;
+}
+
+.sc-pesquisar{
+  font-size: 17px;
+  color: #fff;
+  margin-left: 5px;
+}
+
+.sc-icon-pesquisar{
+  color: #5bc0de;
+  margin-left: 15px;
+  font-size: 70px;
+}
+
+.sc-pesquisar-campos{
+  width: 250px; 
+  overflow: hidden;
+}
+
+.sc-input-pesquisar{
+  height: 38px;
+  border-radius: 18px;
+  font-size: 16px;
+  background-color: #354554;
+  color: #fff;
+}
+
+.sc-textarea{
+  width: 250px;
+  height: 100px;
+  background-color: #354554;
+  color: #fff;
+  border: none;
+}
+
+.sc-botao-relatorios{
+  background-color: #5bc0de;
+  margin-top: 25px;
+  width: 150px;
+  color: #fff;
+  border-radius: 18px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-relatorios:hover{
+  background-color: #2288a6;
+  color: #fff;
+}
+
+.sc-input-relatorios{
+  background-color: #354554 ;
+  border-radius: 18px;
+  width: 230px;
+  color: #fff;
+}
+
+.sc-botao-pesquisar{
+  background-color: #5bc0de;
+  border-radius: 18px;
+  margin-top: 10px;
+  width: 140px;
+  color: #fff;
+}
+
+.sc-textarea-email{
+  width: 290px;
+  height: 300px;
+  background-color: #354554;
+  color: #fff;
+  border: none;
+}
+
+.sc-botao-enviarEmail{
+  background-color: #5bc0de;
+  color: #fff;
+  border-radius: 18px;
+  width: 140px;
+  margin-top: 30px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-enviarEmail:hover{
+  background-color: #2288a6;
+  color: #fff;
+}
+
+.sc-botao-escrever{
+  background-color: #5bc0de;
+  color: #fff;
+  border-radius: 18px;
+  width: 140px;
+  margin-top: 30px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-escrever:hover{
+  background-color: #2288a6;
+  color: #fff;
+}
+
+.sc-botao-email-menu{
+  background-color: #fff;
+  color: #fff;
+}
+
+.sc-botao-relatorio{
+  background-color: #d22e2e;
+  color: #fff;
+}
+
+.sc-botao-voltarCampanha{
+  color: #fff; 
+  background-color: #5dd55d;
+  border-radius: 18px; 
+  width: 140px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-voltarCampanha:hover{
+  background-color: #289b28;
+}
+
+.sc-botao-marcar{
+  color: #fff; 
+  background-color: #5dd55d;
+  border-radius: 18px; 
+  width: 140px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-marcar:hover{
+  background-color: #289b28;
+}
+
+.sc-botao-enviar{
+  background-color: #5bc0de;
+  color: #fff;
+  border-radius: 18px;
+  width: 140px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-enviar:hover{
+  background-color: #d22e2e;
+}
+
+.sc-menu-whats{
+  font-size: 15px;
+}
+
+.sc-menu-email{
+  font-size: 15px;
+}
+
+.sc-menu-relatorio{
+  font-size: 15px;
+}
+
+.sc-menu-sys{
+  font-size: 19px;
+}
+
+.sc-barra-cab{
+  background-color: #0000ff;
+}
+
+
+.sc-botao-acao-g {
+  color: #fff; 
+  background-color: #5bc0de; 
+  border-radius: 18px;
+  height: 3rem;
+  width: 240px;
+  font-size: 20px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-acao-g:hover{
+  background-color: #5dd55d;
+}
+
+
+.sc-botao-acao {
+  color: #fff; 
+  background-color: #5bc0de; 
+  border-radius: 18px;
+  width: 140px;
+  font-size: 16px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-acao:hover{
+  background-color: #5dd55d;
+}
+
+.sc-botao-voltar{
+  color: #fff; 
+  background-color: #c0c0c0;
+  border-radius: 18px; 
+  width: 140px;
+  transition: 0.5s ease-in-out;
+}
+
+.sc-botao-voltar:hover{
+  background-color: #808080;
+}

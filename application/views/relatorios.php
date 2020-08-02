@@ -1,7 +1,7 @@
 
-<br>
-<h2 class="display-6 titulo text-center">Cadastro</h2>
-<br>
+
+<h2 class="display-6 titulo text-center mt-1 mb-1">Relatórios</h2>
+
 <!-- CONTEUDO -->
 <div class="content p-1">
     <div class="list-group-item">
@@ -10,25 +10,29 @@
             <!-- <div class="mr-auto p-0">
                     </div> -->
             <a href="#">
-                <div class="p-2 sc-pesquisar-campos">
-                    <label class="sc-pesquisar">Pesquisar por</label><i class="fa fa-search sc-icon-pesquisar" aria-hidden="true"></i>
-                    <select name="busca" class="form-control sc-input-pesquisar">
-                      <option value=""></option>
-                      <option value="">Relatório</option>
-                      <option value="">Liderança</option>
-                      <option value="">Nome</option>
-                      <option value="">Celular</option>
-                      <option value="">Bairro</option>
-                      <option value="">Ativos</option>
-                    </select>
+                <div class="row">
+                <div class="p-2 sc-pesquisar-campos ml-2">
+                    <label class="sc-pesquisar">Pesquisar por Liderança</label><i class="fa fa-search sc-icon-pesquisar" aria-hidden="true"></i>
+                    <input type="text" name="pesquisaLideranca" class="form-control sc-input mb-2" placeholder="Insira a Liderança">
+                    <button class="btn sc-pesquisa-lideranca">Pesquisar</button>
                   </div>
-            </a>
-            <a href="#" class="">
-                <div class="p-2 ml-5">
-                    <button class="btn btn-info">
-                        <!--<?php echo $qtd_reg?> -->
-                    </button>
-                </div>
+                  <div class="p-2 sc-pesquisar-campos ml-4">
+                    <label class="sc-pesquisar">Pesquisar por Bairro</label><i class="fa fa-search sc-icon-pesquisar" aria-hidden="true"></i>
+                    <input type="text" name="pesquisaBairro" class="form-control sc-input mb-2" placeholder="Insira o Bairro">
+                    <button class="btn sc-pesquisa-bairro">Pesquisar</button>
+                  </div>
+                  <div class="p-2 sc-pesquisar-campos ml-4">
+                    <label class="sc-pesquisar">Pesquisar por Nome</label><i class="fa fa-search sc-icon-pesquisar" aria-hidden="true"></i>
+                    <input type="text" name="pesquisaNome" class="form-control sc-input mb-2" placeholder="Insira o Nome">
+                    <button class="btn sc-pesquisa-nome">Pesquisar</button>
+                  </div>
+
+                  <div class="p-2 sc-pesquisar-campos ml-4">
+                    <label class="sc-pesquisar">Pesquisar por Celular</label><i class="fa fa-search sc-icon-pesquisar" aria-hidden="true"></i>
+                    <input type="text" name="pesquisaCelular" class="form-control sc-input mb-2" placeholder="Insira o Celular">
+                    <button class="btn sc-pesquisa-celular">Pesquisar</button>
+                  </div>
+</div>  
             </a>
         </div>
         <!-- area reservada para alert -->
@@ -40,7 +44,7 @@
         </div>
         <!-- area reservada para alert -->
         <hr>
-        <div class="container">
+        <!-- <div class="container"> -->
             <table class="table table-bordered table-striped table-sm">
                 <thead>
                     <tr>
@@ -77,6 +81,7 @@
                     # $contador--;
                 endforeach; ?>-->
             </table>
+            <button class="btn sc-botao-voltar mt-4">Voltar</button>
             
             <!-- PAGINATOR -->
             <!--<div class="text-center" <?php echo ($qtde_paginas > 1) ? "" : "style='display: none;'" ?>>
@@ -86,7 +91,7 @@
 
 
            
-        </div><!-- final d-flex -->
+        <!-- </div> -->
     </div>
 </div> <!-- FINAL de conteúdo -->
 

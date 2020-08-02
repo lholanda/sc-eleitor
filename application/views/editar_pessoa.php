@@ -141,7 +141,7 @@
           <div class="row">
             <div class="col-md-2">
               <input type="hidden" name="id" value="<?php echo $id ?>">
-              <button type="submit" class="btn sc-botao-atualizar">Atualizar</button>
+              <button type="submit" class="btn sc-botao-acao">Atualizar</button>
             </div>
             <div class="col-md-2">
               <a href="<?php echo site_url('pessoas') ?>" class="btn sc-botao-voltar">

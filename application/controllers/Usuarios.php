@@ -49,7 +49,9 @@
                 
                 $_SESSION['usuario'] = 'eleitor';
 
-                redirect('/pessoas');
+                //redirect('/pessoas');
+                redirect('/main');
+
             } else {
                 $dados['erro'] = 'Usuário ou senha inválidos.';
                 //apresenta novamente o formulário

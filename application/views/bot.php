@@ -23,7 +23,7 @@
         <div class="row">
           <div class="container text-center">
             <a href="https://api.whatsapp.com/send?1=pt_BR&phone=<?php echo $whatsAppPhone ?>" target="_blank">
-              <button type="submit" class="btn sc-botao-whats">
+              <button type="submit" class="btn sc-botao-acao-g">
                 <i class="fa fa-phone" aria-hidden="true"></i>WhatsApp Web</button></a>
           </div>
         </div>

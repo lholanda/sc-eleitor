@@ -1,4 +1,8 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+use function PHPSTORM_META\type;
+
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Pessoa_model extends CI_Model
 {	
@@ -98,16 +102,88 @@ class Pessoa_model extends CI_Model
     public function editPessoa($dados=NULL, $id = NULL)
 	{
         $fieldId = 'peo_' . 'id';
-        //insert data 
+        $update = false;
+        //update data 
         if ($dados != NULL and $id != NULL):
-            $update = $this->db
-                           ->update('tb_people', $dados, [$fieldId => $id]);
-                           
+            try {
+                $update = $this->db
+                ->where($fieldId, $id)
+                ->update('tb_people', $dados);
+                $this->db->trans_commit();
+            } catch (\Throwable $th) {
+                $this->db->trans_rollback();
+            }             
         endif;
-            
-        //return the status
         return $update;
+
+        // assim tambem
+        //if ($dados != NULL and $id != NULL):
+        //    $update = $this->db
+        //                   ->update('tb_people', $dados, array($fieldId => $id));
+        //endif;
+        //if ($dados != NULL and $id != NULL):
+        //    $update = $this->db
+        //                   ->update('tb_people', $dados, [$fieldId => $id]);
+        //endif;
+        //return the status
     }
+
+    public function flagEmail($id = NULL, $flag = NULL)
+	{
+
+        $fieldFlag = 'peo_' . 'flag_email';
+        $update = $this->db->set($fieldFlag, $flag)
+                           ->where('peo_id', $id)
+                           ->update('tb_people');
+
+
+
+//         $fieldId    = 'peo_' . 'id';
+//         $fieldEmail = 'peo_' . 'flag_email';
+
+//         $flag = 1;
+// $id = 0;
+        
+//         $update = false;
+//         //update data 
+//         if ($dados != NULL and $id != NULL):
+//             try {
+//                 $update = $this->db
+//                            //->where($fieldId, $id)
+//                            ->set($fieldEmail, $flag)
+//                            ->update('tb_people', $dados ); 
+//                 $this->db->trans_commit();
+//             } catch (\Throwable $th) {
+//                 $this->db->trans_rollback();
+//             }             
+//         endif;
+        return $update;
+
+        
+
+        
+    }
+
+
+    function alterarTexto($data) {
+        $fieldEmail = 'peo_' . 'flag_email';
+        $this->db->where(true);
+        $this->db->set('', $data['Titulo']);
+        $this->db->set('Data', $data['Data']);
+        $this->db->set('Texto', $data['Texto']);
+        $this->db->update('tb_people');
+
+
+        if($this->db->trans_status() === true){
+            $this->db->trans_commit();
+            return true;
+        }else{
+            $this->db->trans_rollback();
+            return false;
+        }
+    }
+
+
 
     
     public function delPessoa($id)
@@ -133,30 +209,7 @@ class Pessoa_model extends CI_Model
     
     
     
-    function validaCPF($cpf) {
-        // Extrai somente os números
-        $cpf = preg_replace( '/[^0-9]/is', '', $cpf );
-        // Verifica se foi informado todos os digitos corretamente
-        if (strlen($cpf) != 11) {
-            return false;
-        }
-        // Verifica se foi informada uma sequência de digitos repetidos. Ex: 111.111.111-11
-        if (preg_match('/(\d)\1{10}/', $cpf)) {
-            return false;
-        }
-        // Faz o calculo para validar o CPF
-        for ($t = 9; $t < 11; $t++) {
-            for ($d = 0, $c = 0; $c < $t; $c++) {
-                $d += $cpf{$c} * (($t + 1) - $c);
-            }
-            $d = ((10 * $d) % 11) % 10;
-            if ($cpf{$c} != $d) {
-                return false;
-            }
-        }
-        return true;
-    }
-
+    
 
 
 

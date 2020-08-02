@@ -17,47 +17,9 @@ class Pessoas extends CI_Controller {
 	//Página de listar pessoas
 	public function index()
 	{					
-		$pagina   = isset($_GET['pagina'])  ? $_GET['pagina'] : 1;
-
-		#$por_pag = isset($_GET['por_pag']) ? $_GET['por_pag']: 10;
-		
+		$pagina   = isset($_GET['pagina'])  ? $_GET['pagina'] : 1;	
 		$this->controle();
-
-		redirect("/pessoas/pagina/1");	
-		
-
-		//$this->pagina($pagina);
-		// $this->list_pag($value);
-		//echo "aqui";
-		//exit;
-
-
-
-		// //Carrega o Model Pessoa
-		// $this->load->model('pessoa_model', 'pessoa');
-
-		// //Criamos um Array dados para armazenas os pessoa
-		// //Executamos a função no pessoa_model getpessoa
-		// $data['pessoas'] = $this->pessoa->get_people_pag($value , $por_pag);
-
-		// #$value     = a partir de qual registro;
-		// #$reg_p_pag = quantos registros eu quero imprimir;
-
-		// var_dump($data['pessoas']);
-		// exit;
-
-		// // $qtde = $this->pessoa->get_qtde1();
-		// // var_dump($qtde[0]->total);
-
-		// //$qtde = $this->pessoa->get_qtde();
-		// //var_dump($qtde);
-		
-		// //exit;
-
-		//Carregamos a view listarpessoa e passamos como parametro a array pessoa que guarda todos os pessoa da db pessoa
-		// $this->load->view('/template/cabecalho', $data);
-		// $this->load->view('listar_pessoas', $data);
-		// $this->load->view('/template/rodape', $data);
+		redirect("/pessoas/pagina/1");
 	}
 
 
@@ -175,7 +137,7 @@ class Pessoas extends CI_Controller {
 	}
 
 	//Função ativar no DB
-	public function ativar($id)
+	public function ativar($id, $pagina)
 	{
 		$prefixo = 'peo_';
 		//Carrega o Model Pessoas				
@@ -200,7 +162,7 @@ class Pessoas extends CI_Controller {
 		$this->load->helper('url');
 
 		//Fazemos um redicionamento para a página 		
-		redirect("/pessoas");
+		redirect("/pessoas/pagina/$pagina");
 
 	}
 
@@ -254,12 +216,6 @@ class Pessoas extends CI_Controller {
 		} else {
 			$data['btnP'] = '';
 		}
-
-		// var_dump($qtd_reg);
-		// var_dump($qtd_paginas);
-		// var_dump($data);
-		// exit;
-
 		
 		// Conteudo = "<input id='btnOculta_" + lin + "' type='button' value='novo' class='btn btn-default' onclick='Ocultar(this, \"OcultaNovoMedicamento_1\")' style='float:left' />";
 		$btnA = "";
@@ -286,10 +242,6 @@ class Pessoas extends CI_Controller {
 			$botao[$i] = paginator_botao( "$i" , $i );
 		}
 
-		//var_export($botao);
-		//exit;
-
-			
 		$botao_prev = paginator_botao( '&#10218', ($pagina - 1) );
 		$botao_next = paginator_botao( '&#10219', ($pagina + 1) );
 		
@@ -311,9 +263,6 @@ class Pessoas extends CI_Controller {
 		
 		$botoes = '';
 
-		
-		
-
 		if($pagina > 1 ){
 			  if ($pagina < $qtde_paginas-$bot_por_pag){
 				for ( $i=$pagina ; $i <= ($pagina + $bot_por_pag); $i++ ){
@@ -331,18 +280,12 @@ class Pessoas extends CI_Controller {
 			  }	else {
 				$pagina = $qtde_paginas-$bot_por_pag + 1;
 			  }
-		
-
-			
-
 		}
 
 		if($pagina === 1){
 			for ( $i=1 ; $i <= $bot_por_pag; $i++ ){
 				$botoes .= $botao[$i];
 			}
-			//var_dump($botoes);
-			//exit;
 			$paginator = $paginatorInicio . 
 			             $botoes . 
 						 $botao_next .
@@ -356,11 +299,7 @@ class Pessoas extends CI_Controller {
 					$botoes .= $botao[$i];
 
 				}
-				//echo $botoes . '<br>';
 			}
-			//echo $botoes . '<br>';
-			//exit;
-
 
 			$paginator = $paginatorInicio . 
 						 $botao_primeiro .
@@ -368,21 +307,6 @@ class Pessoas extends CI_Controller {
 						 $botoes . 
 						 $paginatorFinal;
 		}
-
-		
-
-		
-
-		
-
-
-
-
-		//var_dump($pagina);
-		//var_dump($qtde_paginas);
-		//echo $paginator;
-		//exit;
-
 
 
 		$data['paginator']   = $paginator;
@@ -402,21 +326,11 @@ class Pessoas extends CI_Controller {
 		
 	public function list_pag( $valor = null )
 	{
-		# code...
-
-		//var_dump($valor);
-		//exit;
-
-		//if($valor == 'apagar' || $valor == 'editar'){
-			//$valor = 0;
-		//}
-
+	
 		if($valor == null){
 			$valor = 0;
 		}
-
 		$reg_p_pag = 8;
-
 		# define se o primeiro botao está ou nao desativado
 		if($valor <= $reg_p_pag){
 			$data['btnA'] = 'disable';
@@ -426,12 +340,7 @@ class Pessoas extends CI_Controller {
 		# Carrega o Model Pessoa
 		$this->load->model('pessoa_model', 'pessoa');
 		$qtde = $this->pessoa->get_qtde_teste(); // nao precisa fazer outro select para contar total
-		
-		// var_dump($valor);
-		// var_dump($reg_p_pag);
-		// var_dump($qtde);
-		// exit;
-
+	
 		if( ($qtde - $valor) < $reg_p_pag ) {
 			$data['btnP'] = 'disable';
 		} else {
@@ -451,38 +360,43 @@ class Pessoas extends CI_Controller {
 			$v_inteiro ++;
 		}
 		$data['qtde_botoes'] = $v_inteiro;
-
-		
-	
-
-		// &lt &#123 <?php echo ($qtde_paginas) // &#125 &gt  &#10923  &raquo 
-
-		// var_dump($data['pessoas']);
-		// var_dump($qtde);
-		// var_dump($v_inteiro);
-		// var_dump($v_resto);
-		// var_dump($data['qtde_botoes'] );
-		// exit;
 		//Carregamos a view listarpessoa e passamos como parametro a array pessoa que guarda todos os pessoa da db pessoa
 		$this->load->view('/template/cabecalho');
 		#$this->load->view('barra_usuario');
 		$this->load->view('listar_pessoas', $data);
 		$this->load->view('/template/rodape');
-	}
-		
+	}	
+
+	
+
+	function validaCPF($cpf) {
+        // Extrai somente os números
+        $cpf = preg_replace( '/[^0-9]/is', '', $cpf );
+        // Verifica se foi informado todos os digitos corretamente
+        if (strlen($cpf) != 11) {
+            return false;
+        }
+        // Verifica se foi informada uma sequência de digitos repetidos. Ex: 111.111.111-11
+        if (preg_match('/(\d)\1{10}/', $cpf)) {
+            return false;
+        }
+        // Faz o calculo para validar o CPF
+        for ($t = 9; $t < 11; $t++) {
+            for ($d = 0, $c = 0; $c < $t; $c++) {
+                $d += $cpf{$c} * (($t + 1) - $c);
+            }
+            $d = ((10 * $d) % 11) % 10;
+            if ($cpf{$c} != $d) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
+
+
 }
-
-
-		//var_dump($qtde);
-		//exit;
-
-		// var_dump($qtde[0]->total);
-		// exit;
-		// if( ($qtde[0]->total - $valor) < $reg_p_pag ) {
-		// 	$data['btnP'] = 'disable';
-		// } else {
-		// 	$data['btnP'] = '';
-		// }
-
 
 
